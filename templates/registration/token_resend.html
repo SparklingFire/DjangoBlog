@@ -1,0 +1,11 @@
+{% extends 'main_page/static_templates/main_page_carcass.html' %}
+{% load staticfiles %}
+{% load bootstrap3 %}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+    <button type="submit">Отправить</button>
+    </form>
+{% endblock %}

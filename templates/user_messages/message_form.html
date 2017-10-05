@@ -1,0 +1,15 @@
+<div class="col-lg-8 col-lg-offset-1">
+        <div class="message-chat">
+            <div class="message-chat-list-wrap">
+                <ul class="message-chat-list">
+                </ul>
+            </div>
+            <form class="message-chat-form">
+                {% csrf_token %}
+                {{ form }}
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary btn-md message-submit-chat">отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>

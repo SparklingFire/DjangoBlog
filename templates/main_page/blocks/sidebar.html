@@ -1,0 +1,67 @@
+{% load custom_templates %}
+
+{% if user.is_authenticated %}
+    <div class="col-lg-12">
+        <div class="user-frame">
+            <div class="user-frame-header">
+                <img class="user-frame-avatar" src="{{ user.get_avatar }}">
+                <ul class="user-frame-list">
+                    <li class="user-frame-username">
+                        <div class="glyphicon glyphicon-user"></div>
+                        {{ user.username }}
+                    </li>
+                    <li class="user-frame-messages">
+                        <div class="glyphicon glyphicon-envelope">
+                        </div> сообщения <span class="user-frame-messages-counter">{% messages_counter %}</span>
+                    </li>
+                    <li class="user-frame-exit">
+                        <div class="glyphicon glyphicon-log-out"></div>
+                        выйти
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endif %}
+<div class="col-lg-12 col-sm-12 col-md-12">
+    <div class="prop-article">
+        <button type="button" class="btn btn-primary" onclick="location.href = '/create_article/'">предложить новость</button>
+    </div>
+    <div class="recent-comments">
+        <div class="recent-comments-heading">Последние комментарии</div>
+        {% for comment in RECENT_COMMENTS %}
+            <div class="recent-comment" id="{{ comment.article.get_absolute_url }}">
+                <div class="comment-info" id="{{ comment.id }}">
+                    <img src="{{ comment.author.get_avatar }}" style="height: 32px" class="img-circle"> {{ comment.author }} {{ comment.created }}
+                </div>
+                <div class="comment-pretext">
+                    {{ comment.text }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="popular-posts" style="margin-top: 40px">
+        <div class="popular-article-heading">
+            Популярные топики
+        </div>
+        {% for article in POPULAR_ARTICLES %}
+            <a href="/article/{{ article.pk }}">
+                <div class="popular-article-title">{{ article.title }}</div>
+                <div class="popular-article-info">
+                    Просмотры: {{ article.get_hits }} Комментарии: {{ article.comment_set.all.count }}
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+        <div class="tags" style="margin-top: 40px">
+        <div class="tags-title">
+            Тэги
+        </div>
+        <div class="tag-list">
+            {% for tag in TAGS %}
+                <button type="button" class="btn btn-primary btn-sm tag" onclick="location.href='/filter/tag/{{ tag.tag }}'">{{ tag.tag }}</button>
+            {% endfor %}
+        </div>
+    </div>
+</div>

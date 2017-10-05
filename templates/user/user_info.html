@@ -1,0 +1,62 @@
+{% extends 'main_page/static_templates/main_page_carcass.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="user-info">
+        <img src="{{ avatar }}" class="img-circle" style="height: 200px; width: 200px">
+        <div class="user-info-username">
+            {{ username }}
+        </div>
+        <div class="user-info-created">
+            дата регистрации: {{ created }}
+        </div>
+        <div class="user-info-rating">
+            <div class="user-info-likes">
+                <span class="glyphicon glyphicon-thumbs-up"></span><span class="user-info-likes-count">{{ likes }}</span>
+            </div>
+            <div class="user-info-dislikes">
+                <span class="glyphicon glyphicon-thumbs-down"></span><span class="user-info-dislikes-count">{{ dislikes }}</span>
+            </div>
+        </div>
+        <div class="user-info-border"></div>
+        <div class="user-info-buttons">
+            {% if auth_user != username %}
+                {% include 'modals/send_message.html' %}
+                {% if user.is_authenticated %}
+                    <span class="user-info-send-message">
+                        <button type="button" class="btn btn-primary btn-large" data-toggle="modal" data-target="#send-message">
+                            отправить сообщение
+                        </button>
+                    </span>
+                    <span class="user-info-block">
+                        <button type="button" class="btn btn-primary btn-large">
+                            {% if username in user.blacklist.get_usernames %}
+                                разблокировать
+                            {% else %}
+                                заблокировать
+                            {% endif %}
+                        </button>
+                    </span>
+                {% endif %}
+            {% else %}
+                {% include 'modals/password_change.html' %}
+
+                <span class="user-info-password-change">
+                    <button type="button" class="btn btn-primary btn-large" data-toggle="modal" data-target="#password-change">
+                        смена пароля
+                    </button>
+                </span>
+
+                <span class="user-info-blacklist">
+                    <button type="button" class="btn btn-primary btn-large user-info-button">{{ button }}</button>
+                </span>
+            {% endif %}
+        </div>
+        <div class="user-info-border"></div>
+        <div class="user-info-activity-title">{{ title }}</div>
+        <div class="user-info-activity-list">
+        </div>
+    </div>
+    <script type="text/javascript" src="{% static 'js/user_info_page.js' %}"></script>
+{% endblock %}

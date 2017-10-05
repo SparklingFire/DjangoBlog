@@ -1,0 +1,33 @@
+{% extends 'main_page/static_templates/main_page_carcass.html' %}
+{% load static %}
+
+{% block content %}
+    {% if object_list %}
+        <div class="row" id="main-article-list">
+            {% for object in object_list %}
+                <div class="article-list-box" id="{{ object.primary_key }}">
+                    <div class="image-layer"><img src="{{ object.get_image }}"></div>
+                    <div class="title-layer">{{ object.title }}</div>
+                    <div class="text-layer">{{ object.text|safe }}</div>
+                    <div class="info-layer">
+                        <div class="info-layer-created">
+                            {{ object.created|date:"d M h:i"}}
+                        </div>
+                        <div class="info-layer-hits">
+                            <span class="glyphicon glyphicon-comment"></span> {{ object.comment_set.count }}
+                            <span class="glyphicon glyphicon-eye-open"></span> {{ object.get_hits }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+                {% if is_paginated %}
+                <div class="pagination-centered">
+                    <div id='pagediv-id'></div>
+                    <div><input type='hidden' id='pagination-id' value='1'></div>
+                    <button id='load-id' type="button" class="btn btn-primary btn-lg">Показать больше</button>
+                </div>
+                {% endif %}
+        <br>
+    {% endif %}
+{% endblock %}

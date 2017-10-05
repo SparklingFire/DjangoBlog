@@ -1,0 +1,234 @@
+.glyphicon-thumbs-up, .glyphicon-thumbs-down{
+    cursor: pointer;
+    color: rgb(179, 179, 179);
+    user-select: none;
+}
+
+.message-avatar{
+    user-select: none;
+}
+
+.like-painter.true .glyphicon-thumbs-up, .article-like-buttons .glyphicon-thumbs-up:hover{
+    color: #00af14;
+    cursor: pointer;
+}
+
+.like-painter.false .glyphicon-thumbs-down, .article-like-buttons .glyphicon-thumbs-down:hover{
+    color: #cc181e;
+    cursor: pointer;
+}
+
+.article-like-buttons .glyphicon-thumbs-down, .article-like-buttons .glyphicon-thumbs-up, .dislikes-count, .likes-count, a, a:hover{
+    color: #b3b3b3
+
+}
+
+.total-likes .article, .total-dislikes .article{
+    font-size: 20px;
+    margin-left: 6px;
+}
+.article-details-title, .article-creator-title{
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.article-details, .article-comments, .messages-list, .article-creator, .message-chat{
+    background-color: white;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.15);
+    padding: 20px;
+    line-height: 150%;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.article-created{
+    text-align: center;
+}
+
+.article-created{
+    font-size: 14px;
+    color: #717171;
+    font-weight: 700;
+    text-align: center;
+}
+
+.comments-title{
+    text-align: center;
+}
+
+.comments-count{
+}
+
+textarea{
+    margin-top: 20px;
+    border-color: #e6e6e6;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 5px;
+    color: #717171;
+    resize: horizontal;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+.comment-message-footer{
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.comment-message-info{
+    margin-left: 40px;
+    padding-top: 4px;
+    margin-top: 10px;
+}
+
+.comment-message-info, .comment-message-footer{
+    font-size: 14px;
+    color: #717171;
+}
+
+
+.comment-message-text, .comment-message-footer{
+    padding-top: 10px;
+    word-wrap: break-word;
+}
+
+.comment-message-text{
+    font-size: 16px;
+    line-height: 120%;
+    white-space: pre-line;
+}
+
+#comment-load-id{
+
+}
+
+.comments-list-comment:last-child {
+    border-bottom: none;
+}
+
+.panel-footer{
+    font-size: 18px;
+    color: white;
+    text-align: center;
+}
+
+.panel-footer{
+    cursor: pointer;
+}
+
+.article-subscribe{
+    background-color: #cc181e;
+    border-color: #cc181e;
+    margin-top: 20px;
+    margin-left: 140px;
+}
+
+.article-subscribe:hover{
+
+}
+
+.article-details-footer{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.article-text{
+    margin-top: 20px;
+}
+
+.article-details-footer .article-like-buttons{
+    position: absolute;
+    bottom: 0;
+}
+
+.article-like-buttons .glyphicon{
+    padding-left: 10px;
+}
+
+.comments-border{
+   border-bottom:  2px solid #e6e6e6;
+}
+
+.article-tags{
+    margin-top: 10px;
+}
+
+.img-circle-comment, .img-circle{
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+}
+
+.img-circle-comment{
+    position: absolute;
+}
+
+
+.child{
+    margin-left: 50px;
+}
+
+.comment-edit, .comment-edit-hide{
+    margin-right: 5px;
+    user-select: none;
+}
+
+.comment-answer, .comment-answer-hide{
+    user-select: none;
+}
+
+.comment-answer:hover, .comment-answer-hide:hover, .comment-edit:hover, .comment-edit-hide:hover{
+    cursor: pointer;
+}
+
+.comment-author-username{
+    font-weight: 700;
+}
+
+.ignore-block, .ignore-block-hide{
+    margin-top: 10px;
+    font-weight: 700;
+    color: #e6e6e6;
+}
+
+.ignore-border{
+    border-bottom: 1px solid #e6e6e6;
+    margin-top: 10px;
+}
+
+.ignore-block, .ignore-block-hide{
+    cursor: pointer;
+}
+
+.target-name{
+    font-weight: 700;
+}
+
+.target-name:hover{
+    cursor: pointer;
+}
+
+.article-creator{
+    position: relative;
+}
+
+.create-article-text, .create-article-title, .tag-form-title, .image-form-title{
+    color: #717171;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.send-article{
+    font-weight: 700;
+}
+
+textarea::-webkit-input-placeholder,
+input::-webkit-input-placeholder{  color: #e6e6e6;}
+
+textarea{
+    padding: 5px;
+}

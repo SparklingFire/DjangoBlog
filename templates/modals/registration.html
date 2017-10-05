@@ -1,0 +1,22 @@
+{% load custom_templates %}
+
+<div id="registration-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="password-change-title">Регистрация</div>
+                <div class="password-change-border"></div>
+                <form method="post" class="registration-form">
+                    {% csrf_token %}
+                    {% registration %}
+                    <button type="button" class="btn btn-primary btn-md registration-subm">Отправить</button>
+                </form>
+            </div>
+            <div class="registration-error-messages"></div>
+            <div class="password-change-border"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-md password-reset-close" data-dismiss="modal">закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>

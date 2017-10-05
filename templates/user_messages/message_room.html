@@ -1,0 +1,9 @@
+{% extends 'main_page/static_templates/main_page_carcass.html' %}
+{% load static %}
+
+{% block content %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    {% include 'user_messages/message_filters.html' %}
+    {% include 'user_messages/message_form.html' %}
+    <script type="text/javascript" src="{% static 'js/chat_room.js' %}"></script>
+{% endblock %}

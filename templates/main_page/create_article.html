@@ -1,0 +1,38 @@
+{% extends 'main_page/static_templates/main_page_carcass.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="article-creator">
+        <div class="article-creator-title">
+            редактор новостей
+        </div>
+        <form class="create-article-form" method="post">
+            {% csrf_token %}
+            <div class="create-article-title">
+                заголовок
+            </div>
+            {{ form.title }}
+            <div class="create-article-text">
+                текст
+            </div>
+            {{ form.text }}
+            {% csrf_token %}
+            <div class="tag-form-title">
+                список тегов
+            </div>
+            {{ form.tag }}
+            {% csrf_token %}
+            <div class="image-form-title">
+                изображение
+            </div>
+            {{ form.image }}
+            <div class="text-right">
+                <button type="button" class="btn btn-primary send-article" style="margin-top: 30px">
+                    отправить
+                </button>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="{% static 'js/create-article.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/error_catcher.js' %}"></script>
+{% endblock %}

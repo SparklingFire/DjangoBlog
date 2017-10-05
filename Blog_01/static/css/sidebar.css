@@ -1,0 +1,99 @@
+.recent-comments-heading, .popular-article-heading, .tags-title, .comments-title{
+    color: #1a1a1a;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.comment-info, .popular-article-title{
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.comment-pretext, .popular-article-info{
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tag, .answer-submit, .panel-footer{
+    margin-top: 10px;
+    margin-right: 5px;
+    background-color: #00af14;
+    border-color: #00af14;
+    border-radius: 5px;
+}
+
+.tag:hover, .tag:focus:hover, .answer-submit:hover, .answer-submit:focus:hover,
+.user-info-send-message button:hover, .user-info-send-message:focus:hover,
+.user-info-password-change button:hover, .user-info-password-change:focus:hover,
+.password-reset-subm:hover, .password-reset-submit:focus:hover,
+.login-subm:hover, .login-subm:focus:hover,
+.send-message-subm:hover, .send-message-subm:focus:hover,
+.prop-article button:hover, .prop-article button:focus:hover,
+.send-article:hover, .send-article:focus:hover,
+.message-submit:hover, .message-submit:focus:hover,
+.password-recovery-button:hover, .password-recovery-button:focus:hover,
+.message-submit-chat:hover, .message-submit-chat:focus:hover{
+    background-color: #1fcc41;
+    border-color: #1fcc41;
+}
+
+.answer-submit{
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.user-info-send-message button, .user-info-password-change button, .password-reset-subm, .login-subm, .answer-submit, .tag, .send-message-subm,
+.tag:focus, .tag:active, .tag:active:focus,
+.login-subm:focus, .login-subm:active, .login-subm:active:focus,
+.password-reset-submit:focus, .password-reset-subm:active, .password-reset-subm:active:focus,
+.user-info-send-message button:focus, .user-info-send-message button:active, .user-info-send-message button:active:focus,
+.user-info-password-change button:focus, .user-info-password-change button:active, .user-info-password-change button:active:focus,
+.password-reset-subm:focus, .password-reset-subm:active, .password-reset-subm:active:focus,
+.answer-submit:focus, .answer-submit:active, .answer-submit:active:focus,
+.send-message-subm:focus, .send-message-subm:active, .send-message-subm:active:focus,
+.prop-article button, .prop-article button:focus, .prop-article button:active, .prop-article button:active:focus,
+.send-article, .send-article:focus, .send-article:active, .send-article:active:focus,
+.message-submit, .message-submit:focus, .message-submit:active, .message-submit:active:focus,
+.password-recovery-button, .password-recovery-button:focus, .password-recovery-button:active, .password-recovery-button:active:focus,
+.message-submit-chat, .message-submit-chat, .message-submit-chat:focus, .message-submit:active, .message-submit:active:focus{
+    background-color: #00af14;
+    border-color: #00af14;
+    outline: none;
+}
+
+.message-submit-chat{
+    margin-top: 10px;
+    margin-right: 0;
+}
+
+.password-recovery-button{
+    margin-left: 20px;
+}
+
+.prop-article button{
+    width: 100%;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.tag{
+    margin-right: 5px;
+}
+
+.user-info-block button, .user-info-blacklist button, .password-reset-close{
+    background-color: #cc181e;
+    border-color: #cc181e;
+}
+
+::-webkit-input-placeholder{
+    font-weight: 100;
+}

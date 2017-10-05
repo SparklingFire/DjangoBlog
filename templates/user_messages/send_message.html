@@ -1,0 +1,15 @@
+{% load custom_templates %}
+
+<div id="SendMessage" class="modal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            Новое сообщение для <span class="modal-target-username"></span>
+        </div>
+        <div class="modal-body">
+            {% include 'user_messages/send_private_message_form.html' %}
+        </div>
+    </div>
+
+  </div>
+</div>

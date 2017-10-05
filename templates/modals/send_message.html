@@ -1,0 +1,22 @@
+{% load custom_templates %}
+
+<div id="send-message" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="password-change-title">отправить сообщение</div>
+                <div class="password-change-border"></div>
+                <form method="post" class="send-message-form">
+                    {% csrf_token %}
+                    {% send_message %}
+                    <button type="button" class="btn btn-primary btn-md send-message-subm">Отправить</button>
+                </form>
+            </div>
+            <div class="send-message-error-messages"></div>
+            <div class="password-change-border"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-md password-reset-close" data-dismiss="modal">закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+{% extends 'main_page/static_templates/main_page_carcass.html' %}
+{% load static %}
+
+
+{% block content %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+        <div class="article-details">
+            <div class="article-created">
+                {{ article.created }}
+            </div>
+
+            <div class="article-details-title" style="margin-bottom: 20px">
+                {{ article.title }}
+            </div>
+
+            <div class="comments-border"></div>
+
+            <div class="article-text">
+                {{ article.text|safe }}
+            </div>
+
+            <div class="comments-border"></div>
+            <div class="article-details-footer">
+                <div class="comment-message-footer">
+                    <span class="like-painter-"></span>
+                    <span class="glyphicon glyphicon-thumbs-up like" style="font-size: 1.41em">
+                        <a href="/article/rate/{{ article.primary_key }}/like/"></a>
+                    </span>
+                    <span class="total-likes">{{ article.get_likes }}</span>
+                    <span class="glyphicon glyphicon-thumbs-down like" style="font-size: 1.41em"><a href="/article/rate/{{ article.primary_key }}/dislike/"></a></span>
+                    <span class="total-dislikes">{{ article.get_dislikes }}</span>
+                </div>
+                <span class="btn btn-primary btn-md article-subscribe" id="{{ article.primary_key }}">
+                    {% if subscription in user.get_subscriptions %}
+                        отписаться
+                    {% else %}
+                        подписаться
+                    {% endif %}
+                </span>
+            </div>
+            <div class="comments-border"></div>
+            <div class="article-tags">
+                {% for tag in article.get_article_tags%}
+                    <button type="button" class="btn btn-primary btn-sm tag" onclick="location.href='/filter/tag/{{ tag.tag }}'">{{ tag.tag }}</button>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="article-comments">
+            <div class="comments-title">
+                Комментарии  <span class="comments-count"> 0 </span>
+            </div>
+            <div class="errors-list" hidden="true"></div>
+            <textarea cols="5" rows="2" class="input-placeholder" hidden="true">Написать в основную ветку</textarea>
+            <form action="" method="post" id="answer-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <br>
+                <button type="submit" class="btn btn-primary btn-md answer-submit">оставить комментарий</button>
+            </form>
+
+            <div class="comments-border"></div>
+                <div class="panel-body" id="comments-list">
+                </div>
+             </div>
+
+    <script type="text/javascript" src="{% static 'js/comments.js' %}"></script>
+
+{% endblock %}

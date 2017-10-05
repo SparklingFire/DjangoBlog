@@ -1,0 +1,144 @@
+.modal-dialog{
+    margin-top: 200px;
+}
+
+#password-change .modal-content,
+#login-modal .modal-content,
+#registration-modal .modal-content,
+#send-message .modal-content{
+    background-color: white;
+    border-radius: 5px;
+    width: 70%;
+}
+
+.password-change-title{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.password-change-border, .password-change-border-footer{
+    margin-right: 20px;
+    margin-left: 20px;
+    border: 1px solid #e6e6e6;
+    margin-top: 10px;
+}
+
+.password-change-border-footer{
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.modal-footer, .password-change-border,.password-change-border-footer{
+    border-top: none;
+}
+
+.password-reset-form, .login-form{
+    margin-top: 20px;
+}
+
+.password-reset-form input, .login-form input, .registration-form input, .password-recovery-form input,
+.send-message-form input, .send-message-form textarea, .create-article-form input, .tags-form input{
+    border-radius: 5px;
+    border: 1px solid #e6e6e6;
+    padding: 5px;
+    display: list-item;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 90%;
+    max-width: 90%;
+}
+
+.create-article-form input, .tags-form input{
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+.user-info-activity-title{
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.activity-element{
+    padding-bottom: 20px;
+}
+
+.activity-element-header{
+    text-align: left;
+    padding-left: 20px;
+}
+
+.activity-element-text{
+    padding-left: 56.5px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.activity-element-header{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.activity-element-username{
+    padding-left: 5px;
+    font-weight: 700;
+}
+
+.activity-element-info, .activity-element-created{
+    padding-left: 5px;
+}
+
+.activity-element-info{
+    font-size: 12px;
+}
+
+.activity-element-created{
+    font-weight: 700;
+}
+
+.day-border, .blacklisted-user-username{
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.user-frame{
+    background-color: white;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.15);
+    height: 90px;
+    margin-bottom: 30px;
+}
+
+.user-frame-avatar{
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    top: 10px;
+    left: 25px;
+}
+
+.user-frame-list{
+    list-style-type: none;
+    padding-top: 12px;
+    margin-left: 50px;
+}
+
+.user-frame-list li:hover,
+.glyphicon-remove:hover{
+    cursor: pointer;
+    color: rgb(204, 24, 30);
+}
+
+.user-info-blacklist-button{
+
+}
+
+.glyphicon-remove{
+    margin-left: 5px;
+}

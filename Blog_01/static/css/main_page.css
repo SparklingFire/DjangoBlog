@@ -1,0 +1,98 @@
+html{
+    overflow-y: scroll;
+}
+
+body{
+    font-family: proxima_nova,sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    background-color: #F9F9F9;
+    min-height: 100%;
+    text-rendering: optimizeLegibility;
+}
+
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+#return-to-top span{
+    color: white;
+    font-size: 20px;
+    padding-left: 14px;
+    padding-top: 12px;
+}
+
+#return-to-top:hover {
+    background: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
+
+#error-messages{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+.error-message, .system-message{
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: -23px;
+    background-color: #a41515;
+    border-color: #a41515;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.system-message{
+    background-color: #1fcc41;
+    border-color: #1fcc41;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#message-success{
+    height: 5%;
+    width: 15%;
+    position: fixed;
+    z-index: 999;
+    top: 50%;
+    right: 50%;
+    background-color: #1a1a1a;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 13px;
+    opacity: 0.7;
+}
+
+.children{
+    margin-left: 50px;
+}

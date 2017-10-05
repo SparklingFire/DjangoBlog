@@ -1,0 +1,8 @@
+{% extends 'main_page/static_templates/main_page_carcass.html' %}
+{% load static %}
+
+{% block content %}
+    {% include 'user_messages/message_filters.html' %}
+    {% include 'user_messages/messages_container.html' %}
+    <script type="text/javascript" src="{% static 'js/chat_room_list.js' %}"></script>
+{% endblock %}

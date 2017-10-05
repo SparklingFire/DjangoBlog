@@ -1,0 +1,49 @@
+                        <div class="comment-message" id={{ comment.pk }}>
+                            <div class="comment-message-info">
+                                <span class="message-avatar" id={{ comment.get_rating_model_pk }}>
+                                    <a href="#" data-toggle="popover" data-trigger="focus" data-placement="top"
+                                        data-content="<div><a class='send-message-popover' href='#'>Написать сообщение</a></div>
+                                        <div><a href='/{{ comment.author }}/user_info/'>Информация о пользователе</a></div>">
+                                        <img src="{{ comment.get_avatar }}" class="img-circle" style="height: 35px">
+                                     </a>
+                                </span>
+                                {% if comment.parent %}
+                                    <span class="parent-name">{{ comment.parent.name}}</span>
+                                {% endif %}
+                                <span class="comment-number" id="{{ comment.name }}">{{ comment.name }}</span>
+                                {% if comment.author %}
+                                    <span class="comment-author-username" data-id={{ comment.author }}>
+                                        {{ comment.author }}
+                                    </span>
+                                {% else %}
+                                    <span class ="comment-author-username">
+                                        Аноним
+                                    </span>
+                                {% endif %}
+                                <span class="comment-created">
+                                    {{comment.created|date:'Y.m.d'}} {{comment.created|time:'h:s'}}
+                                </span>
+                            </div>
+
+                            <div class="comment-message-text">
+                                {{ comment.text|safe }}
+                            </div>
+
+                             <div class="comment-message-footer">
+                                <p>
+                                    <span class="comment-answer">Ответить</span>&#160&#160
+                                    <span class="like-painter-{% check_like user comment request.session.name %}">
+                                        <span class="like-buttons-comment">
+                                            <a href="/rate/{{ comment.id}}/like/">
+                                                <span class="glyphicon glyphicon-thumbs-up like" data-grade="like"></span>
+                                            </a>
+                                            <span class="total-likes">{{ comment.get_likes }}</span>
+                                            <a href="/rate/{{comment.id}}/dislike/">
+                                                <span class="glyphicon glyphicon-thumbs-down like" data-grade="dislike"></span>
+                                            </a>
+                                            <span class="total-dislikes">{{ comment.get_dislikes }}</span>
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
