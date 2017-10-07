@@ -12,11 +12,11 @@ from utils_tags_cp.utils import get_ip
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from .forms import CreateArticleForm
-from utils_tags_cp.forms import ChangeAvatar
 from utils_tags_cp.forms import Image
 from tag.forms import TagForm
 from django.utils import formats
 import json
+import random
 
 
 def ajax_call(request, comment, parent=None, editable=False):
@@ -406,3 +406,30 @@ def update_article(request, pk):
 
     return render(request, 'main_page/create_article.html', {'article_form': article_form,
                                                              'tag_form': tag_form})
+
+
+def generate_articles(request):
+    if request.user.is_anonymous or request.user.is_admin is False:
+        raise Http404
+
+    def generate_title(text_stuff):
+        return ' '.join(text_stuff[random.randint(1, number_of_words)] + str(i)
+                        for i in range(random.randint(1, 4)))[:50]
+
+    with open('templates/admin/generator.txt') as lorem_ipsum:
+        text_stuff = lorem_ipsum.read().split()
+        number_of_words = len(text_stuff) - 1
+        for i in range(20):
+            title = generate_title(text_stuff)
+            try:
+                Article.objects.get(title=title)
+                while title in Article.objects.all().values_list('title'):
+                    title = generate_title(text_stuff)
+            except ObjectDoesNotExist:
+                pass
+            text = ' '.join(text_stuff[random.randint(1, number_of_words)] for i in range(random.randint(500, 1000)))
+            new_article = Article.objects.create(title=title, text=text, author=request.user)
+            new_article.save()
+            Image.objects.create(content_object=new_article)
+
+    return redirect('article-list')

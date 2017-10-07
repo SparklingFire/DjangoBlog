@@ -57,5 +57,9 @@ urlpatterns = [
 
     url(regex='^edit_comment/(?P<pk>[-\w]+)/$',
         view=views.edit_comment,
-        name='edit-comments')
+        name='edit-comments'),
+
+    url(regex='^generate_articles/$',
+        view=views.generate_articles,
+        name='generate-articles')
 ]
